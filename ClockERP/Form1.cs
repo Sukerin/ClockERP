@@ -14,6 +14,10 @@ namespace ClockERP
     
     public partial class Form1 : Form
     {
+        
+        int relateX ;
+        int relateY ;
+        Boolean flag;
         const int MOUSEEVENTF_MOVE = 0x0001;    //  移动鼠标
         const int MOUSEEVENTF_LEFTDOWN = 0x0002;// 模拟鼠标左键按下
         const int MOUSEEVENTF_LEFTUP = 0x0004; //模拟鼠标左键抬起
@@ -41,20 +45,45 @@ namespace ClockERP
         public Form1()
         {
             InitializeComponent();
+            this.TopMost = true;
             timer1.Enabled = true;
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-            DateTime now=DateTime.Now;
-            DateTime dt = DateTime.Parse("2017-05-22 17:43:20");
-            if (now > dt)
+            toolTip1.Show(String.Format("相对于主窗体位置{0},{1}", Control.MousePosition.X - this.Location.X, Control.MousePosition.Y - this.Location.Y), this.webBrowser1);
+            if (flag)
             {
-                Console.WriteLine("dr");
-                timer1.Stop();
+
             }
+           
+            //tetoolTip1.SetToolTip(this.webBrowser1, String.Format("{0},{1}", Control.MousePosition.X, Control.MousePosition.Y));xtBox2.Text = String.Format("{0},{1}", Control.MousePosition.X, Control.MousePosition.Y);
+            //DateTime now=DateTime.Now;
+            //DateTime dt = DateTime.Parse("2017-05-22 17:43:20");
+            //if (now > dt)
+            //{
+            //    Console.WriteLine("dr");
+            //    timer1.Stop();
+            //}
             //MouseLeftClick();
+        }
+
+        private void Form1_LocationChanged(object sender, EventArgs e)
+        {
+            //textBox1.Text = String.Format("{0},{1}", this.Location.X, this.Location.Y);
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            relateX = Convert.ToInt16(textBox1.Text);
+            relateY = Convert.ToInt16(textBox2.Text);
+            flag = true;
         }
     }
 
