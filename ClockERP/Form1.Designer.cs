@@ -56,6 +56,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(790, 52);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 1;
             // 
@@ -63,6 +64,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(790, 104);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 2;
             // 
@@ -87,8 +89,7 @@
             this.Controls.Add(this.webBrowser1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.LocationChanged += new System.EventHandler(this.Form1_LocationChanged);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
