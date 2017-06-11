@@ -24,7 +24,7 @@ namespace ClockERP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //右键拦截器
             Application.AddMessageFilter(this);
             dateTimePicker1.Value = DateTime.Now;
            
