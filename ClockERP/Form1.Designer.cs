@@ -38,6 +38,8 @@
             this.button_end = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox_url = new System.Windows.Forms.TextBox();
+            this.button_goto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // webBrowser1
@@ -49,6 +51,7 @@
             this.webBrowser1.Size = new System.Drawing.Size(767, 469);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("http://www.baidu.com", System.UriKind.Absolute);
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // timer1
             // 
@@ -57,7 +60,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(886, 27);
+            this.textBox1.Location = new System.Drawing.Point(866, 199);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 21);
@@ -65,7 +68,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(823, 91);
+            this.button1.Location = new System.Drawing.Point(803, 263);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -76,14 +79,14 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(886, 54);
+            this.dateTimePicker1.Location = new System.Drawing.Point(866, 226);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(100, 21);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // button_end
             // 
-            this.button_end.Location = new System.Drawing.Point(911, 91);
+            this.button_end.Location = new System.Drawing.Point(891, 263);
             this.button_end.Name = "button_end";
             this.button_end.Size = new System.Drawing.Size(75, 23);
             this.button_end.TabIndex = 5;
@@ -94,7 +97,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(821, 30);
+            this.label1.Location = new System.Drawing.Point(801, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 6;
@@ -103,17 +106,36 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(821, 60);
+            this.label3.Location = new System.Drawing.Point(801, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 8;
             this.label3.Text = "执行时间";
+            // 
+            // textBox_url
+            // 
+            this.textBox_url.Location = new System.Drawing.Point(791, 14);
+            this.textBox_url.Name = "textBox_url";
+            this.textBox_url.Size = new System.Drawing.Size(163, 21);
+            this.textBox_url.TabIndex = 9;
+            // 
+            // button_goto
+            // 
+            this.button_goto.Location = new System.Drawing.Point(960, 12);
+            this.button_goto.Name = "button_goto";
+            this.button_goto.Size = new System.Drawing.Size(38, 25);
+            this.button_goto.TabIndex = 10;
+            this.button_goto.Text = "转到";
+            this.button_goto.UseVisualStyleBackColor = true;
+            this.button_goto.Click += new System.EventHandler(this.button_goto_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 469);
+            this.Controls.Add(this.button_goto);
+            this.Controls.Add(this.textBox_url);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_end);
@@ -140,6 +162,8 @@
         private System.Windows.Forms.Button button_end;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox_url;
+        private System.Windows.Forms.Button button_goto;
     }
 }
 

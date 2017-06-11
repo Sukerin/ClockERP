@@ -27,6 +27,7 @@ namespace ClockERP
 
             Application.AddMessageFilter(this);
             dateTimePicker1.Value = DateTime.Now;
+           
         }
 
         public bool PreFilterMessage(ref Message m)
@@ -60,11 +61,12 @@ namespace ClockERP
     
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            
             if (DateTime.Now.Second == second&& 
                 DateTime.Now.Minute == min&& 
                 DateTime.Now.Hour == hour)
-            {    
+            {
+                this.Activate();
                 MouseMoveAndClick(this.Location);
             }
             
@@ -92,6 +94,21 @@ namespace ClockERP
         {
             timer1.Enabled = false;
         }
+
+
+
+        private void button_goto_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(textBox_url.Text);
+            
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            textBox_url.Text = webBrowser1.Url.ToString();
+        }
+
+       
     }
 
    
