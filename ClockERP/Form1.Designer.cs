@@ -52,7 +52,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(767, 469);
+            this.webBrowser1.Size = new System.Drawing.Size(625, 469);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("http://www.baidu.com", System.UriKind.Absolute);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
@@ -64,7 +64,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(848, 346);
+            this.textBox1.Location = new System.Drawing.Point(694, 365);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(128, 21);
@@ -72,7 +72,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(785, 410);
+            this.button1.Location = new System.Drawing.Point(631, 429);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 3;
@@ -83,14 +83,14 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(848, 373);
+            this.dateTimePicker1.Location = new System.Drawing.Point(694, 392);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(128, 21);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // button_end
             // 
-            this.button_end.Location = new System.Drawing.Point(884, 410);
+            this.button_end.Location = new System.Drawing.Point(730, 429);
             this.button_end.Name = "button_end";
             this.button_end.Size = new System.Drawing.Size(92, 23);
             this.button_end.TabIndex = 5;
@@ -101,7 +101,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(783, 349);
+            this.label1.Location = new System.Drawing.Point(629, 368);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 6;
@@ -110,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(783, 379);
+            this.label3.Location = new System.Drawing.Point(629, 398);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 8;
@@ -118,14 +118,14 @@
             // 
             // textBox_url
             // 
-            this.textBox_url.Location = new System.Drawing.Point(785, 306);
+            this.textBox_url.Location = new System.Drawing.Point(631, 325);
             this.textBox_url.Name = "textBox_url";
             this.textBox_url.Size = new System.Drawing.Size(147, 21);
             this.textBox_url.TabIndex = 9;
             // 
             // button_goto
             // 
-            this.button_goto.Location = new System.Drawing.Point(938, 304);
+            this.button_goto.Location = new System.Drawing.Point(784, 323);
             this.button_goto.Name = "button_goto";
             this.button_goto.Size = new System.Drawing.Size(38, 25);
             this.button_goto.TabIndex = 10;
@@ -136,17 +136,18 @@
             // linkLabel_Instructions
             // 
             this.linkLabel_Instructions.AutoSize = true;
-            this.linkLabel_Instructions.Location = new System.Drawing.Point(783, 288);
+            this.linkLabel_Instructions.Location = new System.Drawing.Point(629, 307);
             this.linkLabel_Instructions.Name = "linkLabel_Instructions";
             this.linkLabel_Instructions.Size = new System.Drawing.Size(29, 12);
             this.linkLabel_Instructions.TabIndex = 11;
             this.linkLabel_Instructions.TabStop = true;
             this.linkLabel_Instructions.Text = "说明";
+            this.linkLabel_Instructions.Click += new System.EventHandler(this.linkLabel_Instructions_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(785, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(631, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(191, 273);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 469);
+            this.ClientSize = new System.Drawing.Size(833, 469);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkLabel_Instructions);
             this.Controls.Add(this.button_goto);

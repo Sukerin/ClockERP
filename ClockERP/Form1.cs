@@ -24,6 +24,7 @@ namespace ClockERP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle=FormBorderStyle.FixedSingle;
             //右键拦截器
             Application.AddMessageFilter(this);
             dateTimePicker1.Value = DateTime.Now;
@@ -108,7 +109,10 @@ namespace ClockERP
             textBox_url.Text = webBrowser1.Url.ToString();
         }
 
-       
+        private void linkLabel_Instructions_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("右键在左侧浏览器上选择点击位置，然后在DatePicker上选择时间，点击开始，到点鼠标会点击右键记录的位置。窗体可以最小化，可以移动，但不能关闭。目前还不支持左侧浏览器，滚动条滑动距离还原，也就是右键选择位置后不要再动浏览器上的滑动条。");
+        }
     }
 
    
