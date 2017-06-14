@@ -70,10 +70,8 @@ namespace ClockERP
                 DateTime.Now.Minute == min&& 
                 DateTime.Now.Hour == hour)
             {
-                while (Form.ActiveForm != this)
-                {
-                    this.Activate();
-                }             
+               
+                this.Activate();                       
                 MouseMoveAndClick(this.Location);
             }
             
