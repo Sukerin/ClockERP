@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ClockERP
@@ -71,7 +72,8 @@ namespace ClockERP
                 DateTime.Now.Hour == hour)
             {
                
-                this.Activate();                       
+                this.Activate();
+                Thread.Sleep(2000);
                 MouseMoveAndClick(this.Location);
             }
             
