@@ -25,6 +25,7 @@ namespace ClockERP
         private void Form1_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle=FormBorderStyle.FixedSingle;
+            webBrowser1.ScriptErrorsSuppressed = true;
             //右键拦截器
             Application.AddMessageFilter(this);
             dateTimePicker1.Value = DateTime.Now;
@@ -56,6 +57,8 @@ namespace ClockERP
             mouse_event(MouseCommand.MOUSEEVENTF_LEFTUP | MouseCommand.MOUSEEVENTF_ABSOLUTE, x, y, 0, 0);//抬起
 
            
+            //mouse_event(MouseCommand.MOUSEEVENTF_LEFTDOWN , x, y, 0, 0);//点击
+            //mouse_event(MouseCommand.MOUSEEVENTF_LEFTUP , x, y, 0, 0);//抬起
         }
    
 
@@ -67,7 +70,10 @@ namespace ClockERP
                 DateTime.Now.Minute == min&& 
                 DateTime.Now.Hour == hour)
             {
-                this.Activate();
+                while (Form.ActiveForm != this)
+                {
+                    this.Activate();
+                }             
                 MouseMoveAndClick(this.Location);
             }
             
