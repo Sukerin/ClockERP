@@ -34,7 +34,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_start = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button_end = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(625, 469);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("http://www.baidu.com", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("http://erp.jd.com", System.UriKind.Absolute);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // timer1
@@ -70,15 +70,15 @@
             this.textBox1.Size = new System.Drawing.Size(128, 21);
             this.textBox1.TabIndex = 1;
             // 
-            // button1
+            // button_start
             // 
-            this.button1.Location = new System.Drawing.Point(631, 429);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "开始";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_start_Click);
+            this.button_start.Location = new System.Drawing.Point(631, 429);
+            this.button_start.Name = "button_start";
+            this.button_start.Size = new System.Drawing.Size(93, 23);
+            this.button_start.TabIndex = 3;
+            this.button_start.Text = "开始";
+            this.button_start.UseVisualStyleBackColor = true;
+            this.button_start.Click += new System.EventHandler(this.button_start_Click);
             // 
             // dateTimePicker1
             // 
@@ -90,11 +90,12 @@
             // 
             // button_end
             // 
+            this.button_end.Enabled = false;
             this.button_end.Location = new System.Drawing.Point(730, 429);
             this.button_end.Name = "button_end";
             this.button_end.Size = new System.Drawing.Size(92, 23);
             this.button_end.TabIndex = 5;
-            this.button_end.Text = "关闭";
+            this.button_end.Text = "停止";
             this.button_end.UseVisualStyleBackColor = true;
             this.button_end.Click += new System.EventHandler(this.button_end_Click);
             // 
@@ -167,11 +168,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_end);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_start);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.webBrowser1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "一起嘻哈";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -186,7 +188,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_start;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button_end;
         private System.Windows.Forms.Label label1;

@@ -13,6 +13,11 @@ namespace ClockERP.Util
         public const int MOUSEEVENTF_MIDDLEUP = 0x0040; //模拟鼠标中键抬起
         public const int MOUSEEVENTF_ABSOLUTE = 0x8000; //标示是否采用绝对坐标
 
-        
+
+        //ShowWindow参数
+        public const int SW_SHOWNORMAL = 1;
+        public const int SW_RESTORE = 9;
+        public const int SW_SHOWNOACTIVATE = 4;
+
     }
 }
