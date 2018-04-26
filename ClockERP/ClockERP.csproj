@@ -75,6 +75,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Action.cs" />
+    <Compile Include="Util\Actions\ActionBrowserNavigate.cs" />
+    <Compile Include="Util\Actions\ActionFindAndShowWindow.cs" />
     <Compile Include="Util\Actions\ActionKeyboardClick.cs" />
     <Compile Include="Util\Actions\ActionMouseLeftClick.cs" />
     <Compile Include="Util\BaseActions.cs" />

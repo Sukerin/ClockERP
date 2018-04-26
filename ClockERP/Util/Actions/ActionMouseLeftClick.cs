@@ -23,5 +23,10 @@ namespace ClockERP.Util.Actions
             BaseActions.Mouse_event(MouseCommand.MOUSEEVENTF_LEFTUP | MouseCommand.MOUSEEVENTF_ABSOLUTE, x, y, 0, 0);//抬起
 
         }
+
+        protected override int IntervalTime()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
