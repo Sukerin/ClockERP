@@ -1,4 +1,5 @@
 ﻿using ClockERP.Util;
+using ClockERP.Util.Actions;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -83,12 +84,9 @@ namespace ClockERP
         {
             
             int x= (p.X + thisFormLocation.X)* 65536 /Screen.PrimaryScreen.Bounds.Width;
-            int y= (p.Y + thisFormLocation.Y) * 65536 /Screen.PrimaryScreen.Bounds.Height;         
-            mouse_event(MouseCommand.MOUSEEVENTF_MOVE | MouseCommand.MOUSEEVENTF_ABSOLUTE, x, y, 0, 0);
-            mouse_event(MouseCommand.MOUSEEVENTF_LEFTDOWN | MouseCommand.MOUSEEVENTF_ABSOLUTE, x, y, 0, 0);//点击
-            mouse_event(MouseCommand.MOUSEEVENTF_LEFTUP | MouseCommand.MOUSEEVENTF_ABSOLUTE, x, y, 0, 0);//抬起
-
-           
+            int y= (p.Y + thisFormLocation.Y) * 65536 /Screen.PrimaryScreen.Bounds.Height;
+            Util.Action action = new ActionMouseLeftClick(x,y);
+            action.Run();
             //mouse_event(MouseCommand.MOUSEEVENTF_LEFTDOWN , x, y, 0, 0);//点击
             //mouse_event(MouseCommand.MOUSEEVENTF_LEFTUP , x, y, 0, 0);//抬起
         }

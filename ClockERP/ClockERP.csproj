@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClockERP</RootNamespace>
     <AssemblyName>ClockERP</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -74,6 +74,10 @@
     <Compile Include="ImessageFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Action.cs" />
+    <Compile Include="Util\Actions\ActionKeyboardClick.cs" />
+    <Compile Include="Util\Actions\ActionMouseLeftClick.cs" />
+    <Compile Include="Util\BaseActions.cs" />
     <Compile Include="Util\MessageID.cs" />
     <Compile Include="Util\MouseCommand.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -112,6 +116,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
