@@ -49,6 +49,7 @@ namespace ClockERP
         private int hour ;
         private int min ;
         private int second ;
+        private DateTime startDateTime;
 
         public Form1()
         {
@@ -95,20 +96,41 @@ namespace ClockERP
     
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-            if (DateTime.Now.Second == second&& 
-                DateTime.Now.Minute == min&& 
-                DateTime.Now.Hour == hour)
-            {
+            TimeSpan diff = DateTime.Now - startDateTime;
 
+            if (diff.Seconds == 0&&
+                diff.Minutes == 0&&
+                diff.Hours == 0)
+            {
                 IntPtr myIntPtr = FindWindow(null, this.Text); //null为类名，可以用Spy++得到，也可以为空
                 ShowWindow(FindWindow(null, this.Text), MouseCommand.SW_RESTORE); //将窗口还原
                 SetForegroundWindow(myIntPtr); //如果没有ShowWindow，此方法不能设置最小化的窗口
-
                 MouseMoveAndClick(this.Location);
             }
-            
-        
+
+            DateTime dateTimeClickCore = DateTime.Now;
+            diff = dateTimeClickCore - startDateTime;
+            if (diff.Seconds == 10 &&
+                diff.Minutes == 0 &&
+                diff.Hours == 0)
+            {
+                int x = (277 + this.Location.X) * 65536 / Screen.PrimaryScreen.Bounds.Width;
+                int y = (146 + this.Location.Y) * 65536 / Screen.PrimaryScreen.Bounds.Height;
+                Util.Action action = new ActionMouseLeftClick(x, y);
+                action.Run();
+            }
+
+            DateTime dateTimeExit = DateTime.Now;
+            diff = dateTimeExit - dateTimeClickCore;
+            if (diff.Seconds == 2 &&
+                diff.Minutes == 0 &&
+                diff.Hours == 0)
+            {
+
+                Application.Exit();
+            }
+
+
         }
 
      
@@ -123,6 +145,8 @@ namespace ClockERP
             hour = dateTimePicker1.Value.Hour;
             min = dateTimePicker1.Value.Minute;
             second = dateTimePicker1.Value.Second;
+            startDateTime = dateTimePicker1.Value;
+
 
             timer1.Enabled = true;
             timer1.Interval = 500;
@@ -155,6 +179,32 @@ namespace ClockERP
         private void linkLabel_Instructions_Click(object sender, EventArgs e)
         {
             MessageBox.Show("右键在左侧浏览器上选择点击位置，然后在DatePicker上选择时间，点击开始，到点鼠标会点击右键记录的位置。窗体可以最小化，可以移动，但不能关闭。目前还不支持左侧浏览器，滚动条滑动距离还原，也就是右键选择位置后不要再动浏览器上的滑动条。");
+        }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();        //可以要，也可以不要，取决于是否隐藏主窗体
+                this.notifyIcon1.Visible = true;
+            }
+
+        }
+
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.notifyIcon1.Visible = true;
+                this.Hide();
+            }
+            else
+            {
+                this.Visible = true;
+                this.WindowState = FormWindowState.Normal;
+                this.Activate();
+            }
         }
     }
 

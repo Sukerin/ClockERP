@@ -21,7 +21,7 @@ namespace ClockERP.Util.Actions
 
         protected override int IntervalTime()
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }

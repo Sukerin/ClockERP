@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JDTWOONETHREE", "ClockERP\JDTWOONETHREE.csproj", "{441652D1-0F46-42BF-BF5D-9EA4EB2E391D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JDTWOONETHREE", "WTF\JDTWOONETHREE.csproj", "{441652D1-0F46-42BF-BF5D-9EA4EB2E391D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
